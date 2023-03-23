@@ -9,8 +9,59 @@ export const Button: React.FC<ButtonTypes> = ({
   ...rest
 }) => {
   return (
-    <Pressable {...rest} style={styles.container}>
-      {isLoading ? <ActivityIndicator color={'white'} /> : <Text style={styles.text}>{children}</Text>}
+    <Pressable {...rest} style={styles.loginButton}>
+      {isLoading ? (
+        <ActivityIndicator color={'white'} />
+      ) : (
+        <Text style={styles.loginButtonText}>{children}</Text>
+      )}
+    </Pressable>
+  );
+};
+
+export const FilterButton = ({ isActive, onPress, text }) => {
+  return (
+    <Pressable
+      onPress={onPress}
+      style={[
+        styles.filterButton,
+        isActive ? styles.filterButtonActive : styles.filterButtonInactive,
+      ]}
+    >
+      <Text
+        style={[
+          styles.filterButtonText,
+          isActive
+            ? styles.filterButtonTextActive
+            : styles.filterButtonTextInactive,
+        ]}
+      >
+        {text}
+      </Text>
+    </Pressable>
+  );
+};
+
+export const BasicButton = ({ style, children, onClick }) => {
+  return (
+    <Pressable onPress={onClick} style={[styles.basicButton, { style }]}>
+      <Text style={styles.basicButtonText}>{children}</Text>
+    </Pressable>
+  );
+};
+
+export const BasicLargeButton = ({ children, onPress }) => {
+  return (
+    <Pressable onPress={onPress} style={styles.basicLargeButton}>
+      <Text style={styles.basicLargeButtonText}>{children}</Text>
+    </Pressable>
+  );
+};
+
+export const OverlayButton = ({ style, children }) => {
+  return (
+    <Pressable style={style}>
+      <Text style={styles.basicButtonText}>{children}</Text>
     </Pressable>
   );
 };
