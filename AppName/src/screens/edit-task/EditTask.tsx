@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Image, Text, View } from 'react-native';
 import { TaskTypeItem } from '../../components/task-type-item/TaskTypeItem';
-import {addTask, TaskType, updateTask, upsertTask} from '../../store/tasks';
+import { TaskType, upsertTask } from '../../store/tasks';
 import {
   BasicLargeButton,
   OverlayButton,
@@ -52,12 +52,11 @@ export const EditTask: React.FC = ({ navigation, route }) => {
     }
     const updatedTask = editTask();
     dispatch(upsertTask(updatedTask));
-    navigation.navigate(Routes.TASK_LIST);
+    navigation.navigate(Routes.TASKS_SCREEN);
   };
 
   return (
     <View style={styles.container}>
-      <Header />
       <View style={styles.imagePlaceholder}>
         <Image
           source={require('./image_placeholder.png')}

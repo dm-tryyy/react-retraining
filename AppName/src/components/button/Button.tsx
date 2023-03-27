@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, Text, ActivityIndicator } from 'react-native';
+import { Pressable, Text, ActivityIndicator, Image, View } from 'react-native';
 import { styles } from './button.styles';
 import { ButtonTypes } from './button.types';
 
@@ -63,5 +63,16 @@ export const OverlayButton = ({ style, children }) => {
     <Pressable style={style}>
       <Text style={styles.basicButtonText}>{children}</Text>
     </Pressable>
+  );
+};
+
+export const TabBarIcon = ({ focused, activeIcon, inActiveIcon, title }) => {
+  const iconSrc = focused ? activeIcon : inActiveIcon;
+  const color = focused ? '#6871EE' : 'grey';
+  return (
+    <View style={{ justifyContent: 'center', alignItems: 'center', paddingTop: 18 }}>
+      <Image source={iconSrc} style={{ width: 22, height: 22 }} />
+      <Text style={{ color: color, fontSize: 12, marginTop: 5 }}>{title}</Text>
+    </View>
   );
 };

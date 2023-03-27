@@ -14,9 +14,11 @@ export const styles = StyleSheet.create({
   },
   addTaskContainer: {
     flexDirection: 'row',
+    width: '100%',
     paddingBottom: 10,
     paddingTop: 28,
     justifyContent: 'space-between',
+    backgroundColor: '#6871EE',
   },
   invitationText: {
     paddingTop: 8,

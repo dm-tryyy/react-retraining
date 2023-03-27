@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 76,
-    paddingBottom: 14,
+    paddingBottom: 13,
     paddingTop: 40,
     borderBottomRightRadius: 16,
     borderBottomLeftRadius: 16,

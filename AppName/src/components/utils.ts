@@ -1,7 +1,8 @@
-export const Color = {
+export const ColorPallette = {
   ShimmeringBlush: '#DF7E8D',
   MinionYellow: '#F8D94F',
   PearlAqua: '#77D4BD',
+  VeryLightBlue: '#6871EE',
 };
 
 export const basicRoundedButton = {

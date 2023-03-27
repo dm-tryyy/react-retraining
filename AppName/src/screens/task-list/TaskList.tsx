@@ -1,5 +1,4 @@
 import React from 'react';
-import { Header } from '../../components/header/Header';
 import TaskListItem from '../../components/task-list-item/TaskListItem';
 import { ScrollView, Text, View } from 'react-native';
 import { styles } from './task-list.styles';
@@ -32,7 +31,6 @@ export const TaskList: React.FC = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Header onAddTaskClick={goToAddTaskScreen} />
       <Filter status={status} onChange={onStatusChange} />
       <Text
         style={{
